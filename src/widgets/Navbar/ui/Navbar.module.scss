@@ -1,0 +1,26 @@
+.Navbar {
+    width: 100%;
+    // height: var(--navbar-height);
+    height: 80px;
+    background-color: #06447d;
+    // background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.links {
+    margin-left: auto;
+}
+
+.mainLink {
+    margin-right: 15px;
+}
+
+.Image {
+    width: 80px;
+    height: 80px;
+    // margin: 8px;
+}
+.Search {
+}
