@@ -19,16 +19,19 @@ const MainPage = (props: MainPageProps) => {
         "Бульдозеры-рыхлители на тракторе, мощность 121 кВт (165 л.с.)', маш.-ч",
         "Бульдозеры-рыхлители на тракторе, мощность 132 кВт (180 л.с.)', маш.-ч",
     ];
+
     return (
         <Flex
             className={classNames(cls.MainPage, {}, [className])}
             align="center"
             justify="center"
         >
-            {/* <DataList data={data1} />
-            <DataList data={data1} /> */}
             <Flex>
-                <DataList data={data1} />
+                <DataList
+                    header={"Техника"}
+                    data={data1}
+                    isSearchActive={true}
+                />
             </Flex>
         </Flex>
     );

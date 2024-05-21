@@ -8,12 +8,14 @@ import DataService from "features/DataService/DataService";
 interface DataListProps {
     className?: string;
     data: string[];
+    header: string;
+    isSearchActive: boolean;
 }
 
 const { Search } = Input;
 
 export const DataList = (props: DataListProps) => {
-    const { className, data } = props;
+    const { className, data, header, isSearchActive } = props;
 
     const onSearch = (text: string) => {
         async function getData(text: string) {
@@ -35,14 +37,17 @@ export const DataList = (props: DataListProps) => {
             align="center"
             vertical
         >
-            <Search
-                className={cls.Search}
-                placeholder="Поиск"
-                onSearch={onSearch}
-                style={{ width: 200 }}
-            />
+            {isSearchActive && (
+                <Search
+                    className={cls.Search}
+                    placeholder="Поиск"
+                    onSearch={onSearch}
+                    style={{ width: 200 }}
+                />
+            )}
+
             <List
-                header={<div>Техника</div>}
+                header={<div>{header}</div>}
                 bordered
                 dataSource={data}
                 renderItem={(item) => (
